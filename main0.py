@@ -1,11 +1,10 @@
 import turtle
-import sys
-import numpy as np
 from time import sleep
+
+import numpy as np
 
 screen = turtle.Screen()
 screen.title("Turtle graph")
-from random import randint, sample
 
 plt = turtle.Turtle()
 writer = turtle.Turtle()
@@ -20,7 +19,6 @@ plt.setposition(-400, -250)
 frame.setposition(-400, -250)
 writer.setposition(-430, -250)
 
-9
 plt.pendown()
 frame.pendown()
 frame.pensize(3)
@@ -127,5 +125,3 @@ while True:
 	sleep(0.01)
 # plt.clear()
 
-screen.mainloop()
-sys.exit(0)

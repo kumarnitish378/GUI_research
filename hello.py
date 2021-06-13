@@ -1,9 +1,11 @@
-from PySide2 import *
 import random as randint
-from PySide2.QtWidgets import QFormLayout, QWidget, QApplication, QPushButton, QLineEdit
-from PySide2.QtGui import QIntValidator, QFont
+from PySide2.QtWidgets import QWidget, QApplication, QPushButton
 import pyqtgraph as pg
-from PySide2.QtCore import Qt
+import random as randint
+
+import pyqtgraph as pg
+from PySide2.QtWidgets import QWidget, QApplication, QPushButton
+
 file = open("C:\\Users\\saba-mampc\\PycharmProjects\\pythonProject2\\gang_gautam_ecg.txt", 'r')
 # LA = []
 # RA = []
