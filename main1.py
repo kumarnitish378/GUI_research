@@ -26,7 +26,7 @@ app = QApplication(sys.argv)
 window = QWidget()
 window.setWindowTitle("Hello World")
 window.setFixedWidth(1000)
-window.move(1700, 100)
+window.move(100, 100)
 window.setStyleSheet("background: #161219")
 
 grid = QGridLayout()
