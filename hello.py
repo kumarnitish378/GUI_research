@@ -1,4 +1,6 @@
 import random as randint
+
+from PyQt5.uic.properties import QtCore
 from PySide2.QtWidgets import QWidget, QApplication, QPushButton
 import pyqtgraph as pg
 import random as randint
@@ -43,9 +45,10 @@ file = open("C:\\Users\\saba-mampc\\PycharmProjects\\pythonProject2\\gang_gautam
 # a = int(input("enter the starting value, x:- "))
 # b = int(input("enter the last value,y:- "))
 # x = int(input("enter the number of samples:- "))
-a = -3*1000
-b = 3*1000
+a = -3 * 1000
+b = 3 * 1000
 x = 4000
+
 
 class Window(QWidget):
     def __init__(self):
@@ -104,12 +107,12 @@ class Window(QWidget):
 
         self.plotWidget_ted = pg.PlotWidget(self)
         # Set the size and relative position of the control
-        self.plotWidget_ted.setGeometry(QtCore.QRect(20,30,800,550))
-        #self.plotWidget_ted.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        self.plotWidget_ted.setGeometry(QtCore.QRect(20, 30, 800, 550))
+        # self.plotWidget_ted.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
 
         self.plotWidget_ted.setYRange(a, b)
-        #self.plotWidget_ted.setXRange(0, x)
-        #layoutgrid.addWidget(self.plotWidget_ted)
+        # self.plotWidget_ted.setXRange(0, x)
+        # layoutgrid.addWidget(self.plotWidget_ted)
 
         self.setWindowTitle("garph of given value")
         self.plotWidget_ted.setLabel('left', 'values------->')
@@ -117,8 +120,8 @@ class Window(QWidget):
 
     def cur1(self):
         self.data1 = [0] * x
-                # print(self.data1)
-        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear = True)
+        # print(self.data1)
+        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear=True)
         self.timer = pg.QtCore.QTimer()
         self.timer.timeout.connect(self.update_data1)
         self.timer.start(1)
@@ -137,25 +140,25 @@ class Window(QWidget):
                 LA.append(float(data2[i + 1].replace("L", '')))
         for j in LA:
             self.data1[:-1] = self.data1[1:]
-            self.data1[-1] = round(j*1000)
-            print(round(j*1000))
-                # Data is filled into the drawing curve
+            self.data1[-1] = round(j * 1000)
+            print(round(j * 1000))
+            # Data is filled into the drawing curve
             self.curve1.setData(self.data1)
 
     def cur2(self):
         self.data1 = [0] * x
-                # print(self.data1)
-        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear = True)
+        # print(self.data1)
+        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear=True)
         self.timer = pg.QtCore.QTimer()
         self.timer.timeout.connect(self.update_data2)
         self.timer.start(1)
 
     def update_data2(self):
         try:
-            value = randint(a,a+50)
+            value = randint(a, a + 50)
             self.data1[:-1] = self.data1[1:]
             self.data1[-1] = value
-             # Data is filled into the drawing curve
+            # Data is filled into the drawing curve
             self.curve1.setData(self.data1)
             print(value)
         except Exception as e:
@@ -163,18 +166,18 @@ class Window(QWidget):
 
     def cur3(self):
         self.data1 = [0] * x
-                # print(self.data1)
-        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear = True)
+        # print(self.data1)
+        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear=True)
         self.timer = pg.QtCore.QTimer()
         self.timer.timeout.connect(self.update_data3)
         self.timer.start(1)
 
     def update_data3(self):
         try:
-            value = randint(a+50,a+100)
+            value = randint(a + 50, a + 100)
             self.data1[:-1] = self.data1[1:]
             self.data1[-1] = value
-             # Data is filled into the drawing curve
+            # Data is filled into the drawing curve
             self.curve1.setData(self.data1)
             print(value)
         except Exception as e:
@@ -182,18 +185,18 @@ class Window(QWidget):
 
     def cur4(self):
         self.data1 = [0] * x
-                # print(self.data1)
-        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear = True)
+        # print(self.data1)
+        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear=True)
         self.timer = pg.QtCore.QTimer()
         self.timer.timeout.connect(self.update_data4)
         self.timer.start(1)
 
     def update_data4(self):
         try:
-            value = randint(a+100,a+150)
+            value = randint(a + 100, a + 150)
             self.data1[:-1] = self.data1[1:]
             self.data1[-1] = value
-             # Data is filled into the drawing curve
+            # Data is filled into the drawing curve
             self.curve1.setData(self.data1)
             print(value)
         except Exception as e:
@@ -201,18 +204,18 @@ class Window(QWidget):
 
     def cur5(self):
         self.data1 = [0] * x
-                # print(self.data1)
-        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear = True)
+        # print(self.data1)
+        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear=True)
         self.timer = pg.QtCore.QTimer()
         self.timer.timeout.connect(self.update_data5)
         self.timer.start(1)
 
     def update_data5(self):
         try:
-            value = randint(a+150,a+200)
+            value = randint(a + 150, a + 200)
             self.data1[:-1] = self.data1[1:]
             self.data1[-1] = value
-             # Data is filled into the drawing curve
+            # Data is filled into the drawing curve
             self.curve1.setData(self.data1)
             print(value)
         except Exception as e:
@@ -220,18 +223,18 @@ class Window(QWidget):
 
     def cur6(self):
         self.data1 = [0] * x
-                # print(self.data1)
-        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear = True)
+        # print(self.data1)
+        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear=True)
         self.timer = pg.QtCore.QTimer()
         self.timer.timeout.connect(self.update_data6)
         self.timer.start(1)
 
     def update_data6(self):
         try:
-            value = randint(a+200,a+250)
+            value = randint(a + 200, a + 250)
             self.data1[:-1] = self.data1[1:]
             self.data1[-1] = value
-             # Data is filled into the drawing curve
+            # Data is filled into the drawing curve
             self.curve1.setData(self.data1)
             print(value)
         except Exception as e:
@@ -239,18 +242,18 @@ class Window(QWidget):
 
     def cur7(self):
         self.data1 = [0] * x
-                # print(self.data1)
-        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear = True)
+        # print(self.data1)
+        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear=True)
         self.timer = pg.QtCore.QTimer()
         self.timer.timeout.connect(self.update_data7)
         self.timer.start(1)
 
     def update_data7(self):
         try:
-            value = randint(a+250,a+300)
+            value = randint(a + 250, a + 300)
             self.data1[:-1] = self.data1[1:]
             self.data1[-1] = value
-             # Data is filled into the drawing curve
+            # Data is filled into the drawing curve
             self.curve1.setData(self.data1)
             print(value)
         except Exception as e:
@@ -258,18 +261,18 @@ class Window(QWidget):
 
     def cur8(self):
         self.data1 = [0] * x
-                # print(self.data1)
-        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear = True)
+        # print(self.data1)
+        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear=True)
         self.timer = pg.QtCore.QTimer()
         self.timer.timeout.connect(self.update_data8)
         self.timer.start(1)
 
     def update_data8(self):
         try:
-            value = randint(a+300,a+350)
+            value = randint(a + 300, a + 350)
             self.data1[:-1] = self.data1[1:]
             self.data1[-1] = value
-             # Data is filled into the drawing curve
+            # Data is filled into the drawing curve
             self.curve1.setData(self.data1)
             print(value)
         except Exception as e:
@@ -277,18 +280,18 @@ class Window(QWidget):
 
     def cur9(self):
         self.data1 = [0] * x
-                # print(self.data1)
-        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear = True)
+        # print(self.data1)
+        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear=True)
         self.timer = pg.QtCore.QTimer()
         self.timer.timeout.connect(self.update_data9)
         self.timer.start(1)
 
     def update_data9(self):
         try:
-            value = randint(a+350,a+400)
+            value = randint(a + 350, a + 400)
             self.data1[:-1] = self.data1[1:]
             self.data1[-1] = value
-             # Data is filled into the drawing curve
+            # Data is filled into the drawing curve
             self.curve1.setData(self.data1)
             print(value)
         except Exception as e:
@@ -315,18 +318,18 @@ class Window(QWidget):
 
     def cur11(self):
         self.data1 = [0] * x
-                # print(self.data1)
-        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear = True)
+        # print(self.data1)
+        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear=True)
         self.timer = pg.QtCore.QTimer()
         self.timer.timeout.connect(self.update_data11)
         self.timer.start(1)
 
     def update_data11(self):
         try:
-            value = randint(a+450,a+500)
+            value = randint(a + 450, a + 500)
             self.data1[:-1] = self.data1[1:]
             self.data1[-1] = value
-             # Data is filled into the drawing curve
+            # Data is filled into the drawing curve
             self.curve1.setData(self.data1)
             print(value)
         except Exception as e:
@@ -334,29 +337,28 @@ class Window(QWidget):
 
     def cur12(self):
         self.data1 = [0] * x
-                # print(self.data1)
-        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear = True)
+        # print(self.data1)
+        self.curve1 = self.plotWidget_ted.plot(self.data1, name="mode1", clear=True)
         self.timer = pg.QtCore.QTimer()
         self.timer.timeout.connect(self.update_data12)
         self.timer.start(1)
 
     def update_data12(self):
+        try:
+            value = 0
+            self.data1[:-1] = self.data1[1:]
+            self.data1[-1] = value
+            # Data is filled into the drawing curve
+            self.curve1.setData(self.data1)
+            print(value)
 
-            try:
-                value = 0
-                self.data1[:-1] = self.data1[1:]
-                self.data1[-1] = value
-                            # Data is filled into the drawing curve
-                self.curve1.setData(self.data1)
-                print(value)
-
-            except Exception as e:
-                print(str(e))
-
+        except Exception as e:
+            print(str(e))
 
 
 if __name__ == '__main__':
     import sys
+
     # PyQt5 Program fixed writing
     app = QApplication(sys.argv)
     # Instantiate and display the window bound to the drawing control

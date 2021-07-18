@@ -9,7 +9,8 @@ import random
 
 
 
-url = "https://opentdb.com/api.php?amount=50&category=18&difficulty=medium&type=multiple"
+# url = "https://opentdb.com/api.php?amount=50&category=18&difficulty=medium&type=multiple"
+url = "https://opentdb.com/api.php?amount=50&category=9&difficulty=easy&type=multiple"
 # global dictionary of dynamically changing widgets
 with urlopen(url) as webpage:
     data = json.loads(webpage.read().decode())
@@ -63,7 +64,6 @@ parameters = {
     "score": [],
     "index": []
 }
-
 # exit(0)
 widgets = {
     "logo": [],
@@ -189,7 +189,7 @@ def frame1():
             font-size: 35px;
             color: 'white';
             padding: 25px 0;
-            margin: 100px 200px;
+            margin: 100px 100px;
         }
         *:hover{
             background: '#BC006C';

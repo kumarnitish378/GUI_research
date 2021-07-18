@@ -12,10 +12,11 @@ app = QApplication(sys.argv)
 
 #window and settings
 window = QWidget()
-window.setWindowTitle("Who wants to be a programmer???")
-window.setFixedWidth(1000)
+window.setWindowTitle("Quize GAme")
+window.setGeometry(480,800,0,0)
+# window.setFixedWidth(1000)
 #place window in (x,y) coordinates
-#window.move(2700, 200)
+window.move(0, 0)
 window.setStyleSheet("background: #161219;")
 
 #try to have a look at all 4 frames
