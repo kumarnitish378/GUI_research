@@ -45,6 +45,7 @@ class AudioStream(object):
         self.FORMAT = pyaudio.paInt16
         self.CHANNELS = 1
         self.RATE = 44100
+        # self.RATE = 22050
         self.CHUNK = 1024 * 2
 
         self.p = pyaudio.PyAudio()
@@ -87,6 +88,7 @@ class AudioStream(object):
         wf_data = self.stream.read(self.CHUNK)
         wf_data = struct.unpack(str(2 * self.CHUNK) + 'B', wf_data)
         wf_data = np.array(wf_data, dtype='b')[::2] + 128
+        print(len(wf_data))
         self.set_plotdata(name='waveform', data_x=self.x, data_y=wf_data,)
 
         # sp_data = fft(np.array(wf_data, dtype='int8') - 128)
